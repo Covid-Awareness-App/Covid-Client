@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function StateDetails({match}) {
 
@@ -16,17 +17,17 @@ function StateDetails({match}) {
                 // let locationArray = [locations];
                 locationArray.push(res);
                 // setLocations(locationArray)
-                console.log(locationArray)
+                // console.log(locationArray)
                 setLocations(locationArray)
             })
         })
     }
 
     useEffect(() => {
-        fetch(`http://localhost:8000/state/${match.params.id}`)
+        fetch(`https://cv19-app.herokuapp.com/state/${match.params.id}`)
             .then((res) => res.json())
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 setStateDetail(res)
                 getLocations(res.locations)
             })
@@ -49,7 +50,10 @@ function StateDetails({match}) {
     // console.log(businessName)
     // console.log(businessName.hours)
     // console.log(businessName.address)
-    console.log(locations)
+    // console.log(locations)
+    // console.log(locations[0].id)
+    // console.log(locations[1].id)
+    // console.log(locations[2].id)
 
     // console.log(setStateDetail)
 
@@ -62,7 +66,9 @@ function StateDetails({match}) {
             <h3>Get tested / vaccinated at the following locations:</h3>
 
             {stateDetail.locations && locations.map((location) => (
-                <h3>{`business name:${location.business_name}`}</h3>
+                <Link to={`/locations/${locations[0].id}`} key={locations.id}>
+                <h3>{`Business Name: ${location.business_name}`}</h3>
+                </Link>
             ))}
 
             {/* {businessName && businessName.business_name.map((businessName) => (
