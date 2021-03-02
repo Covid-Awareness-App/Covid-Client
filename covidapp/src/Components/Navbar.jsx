@@ -6,7 +6,7 @@ const Navbar = () => {
     const [newState, setNewState] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:8000/state')
+        fetch('https://cv19-app.herokuapp.com/state')
             .then((res) => res.json())
             .then(res => {
                 // console.log(res)
