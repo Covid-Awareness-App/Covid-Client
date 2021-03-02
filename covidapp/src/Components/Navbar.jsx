@@ -18,11 +18,11 @@ const Navbar = () => {
         return (
             <div>
                 {newState.map((state) => (
-                    // <Link to={`/${state.id}`}>
+                    <Link to={`/${state.id}`} key={state.id}>
                         <div>
                             <h3>{`${state.name} - ${state.average_daily_cases}`}</h3>
                         </div>
-                    // </Link>
+                    </Link>
                 ))}
             </div>
         );
