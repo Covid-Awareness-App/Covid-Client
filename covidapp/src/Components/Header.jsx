@@ -1,11 +1,11 @@
 import React from 'react';
 
-function SearchForm(props) {
+function Header() {
     return (
         <div>
-            
+            <h1>HEALTHFIRST</h1>
         </div>
     );
 }
 
-export default SearchForm;
+export default Header;
