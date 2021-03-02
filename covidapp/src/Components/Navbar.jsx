@@ -9,15 +9,15 @@ const Navbar = () => {
         fetch('http://localhost:8000/state')
             .then((res) => res.json())
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 setNewState(res)
             })
         .catch(console.error)
     }, []);
 
         return (
-            <div>
-                {newState.map((state) => (
+            <div className="navbar-container">
+                {newState && newState.map((state) => (
                     <Link to={`/state/${state.id}`} key={state.id}>
                         <div>
                             <h3>{`${state.name}`}</h3>
