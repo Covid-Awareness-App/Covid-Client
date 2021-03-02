@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 function StateDetails({match}) {
 
     const [stateDetail, setStateDetail] = useState({});
-    // const [locationList, setLocationList] = useState({});
 
     useEffect(() => {
         fetch(`http://localhost:8000/state/${match.params.id}`)
@@ -15,9 +14,6 @@ function StateDetails({match}) {
             .catch(console.error);
     }, []);
 
-    // useEffect(() => {
-    //     fetch
-    // })
     
     return (
         <div>

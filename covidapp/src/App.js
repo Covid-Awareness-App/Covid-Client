@@ -19,7 +19,7 @@ function App() {
     <div className="App">
       <Header />
       <Navbar />
-      <Route path="state/:id"
+      <Route path="/state/:id"
              render={(routerProps) => <StateDetails match={routerProps.match}/>}/>
       <Footer />
     </div>
