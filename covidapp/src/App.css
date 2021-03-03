@@ -8,6 +8,19 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  background-color: blanchedalmond;
+  background-color: lightsteelblue;
   text-decoration: none;
+  width: 20%;
+}
+
+main{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+.stateDetails {
+  /* margin-left: 20%; */
+  /* width: 60%; */
 }

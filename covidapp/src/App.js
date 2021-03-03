@@ -19,12 +19,14 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <div className="main">
       <Navbar />
       <Route path="/state/:id"
              render={(routerProps) => <StateDetails match={routerProps.match}/>}/>
       <Route path="/locations/:id"
              render={(routerProps) => <LocationDetails match={routerProps.match}/>}/>
       <Footer />
+      </div>
     </div>
   );
 }
