@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import UpdateLocationbtn from './UpdateLocationbtn';
+import DeleteLocation from './DeleteLocation';
 
 function LocationDetails({match}) {
     const [locateDetails, setLocateDetails] = useState({});
@@ -25,6 +26,7 @@ function LocationDetails({match}) {
             <h3>{`This Location Provides: ${locateDetails.offers}`}</h3>
             
             <UpdateLocationbtn id={locateDetails.id}/>
+            <DeleteLocation id={locateDetails.id}/>
         </div>
     );
 }
