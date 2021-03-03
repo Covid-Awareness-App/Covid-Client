@@ -66,7 +66,7 @@ function StateDetails({match}) {
             <h3>Get tested / vaccinated at the following locations:</h3>
 
             {stateDetail.locations && locations.map((location) => (
-                <Link to={`/locations/${locations[0].id}`} key={locations.id}>
+                <Link to={`/locations/${location.id}`}>
                 <h3>{`Business Name: ${location.business_name}`}</h3>
                 </Link>
             ))}
