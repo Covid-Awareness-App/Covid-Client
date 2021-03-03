@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import UpdateLocationbtn from './UpdateLocationbtn';
 
 function LocationDetails({match}) {
     const [locateDetails, setLocateDetails] = useState({});
@@ -23,6 +24,7 @@ function LocationDetails({match}) {
             <h3>{`Contact Information: ${locateDetails.contact_number}`}</h3>
             <h3>{`This Location Provides: ${locateDetails.offers}`}</h3>
             
+            <UpdateLocationbtn id={locateDetails.id}/>
         </div>
     );
 }
