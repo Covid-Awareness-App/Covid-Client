@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import UpdateLocationFrm from './CreateLocationFrm';
+import UpdateLocationFrm from './UpdateLocationFrm';
 
 function UpdateLocationbtn( { id }) {
     const [locationBtn, setLocationBtn] = useState(false);

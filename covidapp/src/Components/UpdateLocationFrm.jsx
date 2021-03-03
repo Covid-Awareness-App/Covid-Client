@@ -4,13 +4,32 @@ function UpdateLocationFrm({ setLocationBtn, id }) {
     const axios = require("axios");
     const url = "https://cv19-app.herokuapp.com"
 
-    const [updtLocFrm, setUpdtLocFrm] = useState({});
+    const [updtLocFrm, setUpdtLocFrm] = useState(null);
+
+    // function updateLocation() {
+    //     console.log(updtLocFrm)
+    //     axios
+    //         .put(`${url}/locations/${id}`, updtLocFrm)
+    //         .catch((err) => console.log(err));
+    // }
 
     function updateLocation() {
         console.log(updtLocFrm)
-        axios
-            .put(`${url}/locations/${id}`, updtLocFrm)
-            .catch((err) => console.log(err));
+        axios ({
+            method: 'put',
+            url: `${url}/locations/${id}`,
+            data: {
+                name: "https://cv19-app.herokuapp.com/state/8",
+                business_name: "CVSSSSSSSSSSSSS - Newwww & Updated",
+                business_img: "HHTHTHNew - Updated",
+                address: "123 Fake street Newww - Updated",
+                hours: "Monday - Sunday 7Am - 12AM Newwwww - Updated",
+                contact_number: "555-555-5555 Newwwww - Updated",
+                offers: "Newwwww - Updated",
+                feedbacks: []
+            }
+          });
+            
     }
 
     const handleSubmitLoc = (event) => {
@@ -69,7 +88,7 @@ function UpdateLocationFrm({ setLocationBtn, id }) {
                 onChange={handleChangeLoc}
             ></textarea>
 
-            <button type="submit">Update Location</button>
+            <button type="submit" onClick={handleSubmitLoc}>Update Location</button>
         </form>
     );
 }
