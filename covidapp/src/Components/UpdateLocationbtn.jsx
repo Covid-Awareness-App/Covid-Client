@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import UpdateLocationFrm from './UpdateLocationFrm';
 
-function UpdateLocationbtn( { id }) {
+function UpdateLocationbtn( { id, stateId}) {
     const [locationBtn, setLocationBtn] = useState(false);
 
     function handleChangeLocBtn() {
@@ -20,6 +20,7 @@ function UpdateLocationbtn( { id }) {
         return(
             <div>
                 <UpdateLocationFrm 
+                    stateId={stateId}
                     setLocationBtn={setLocationBtn}
                     id={id}
                 />

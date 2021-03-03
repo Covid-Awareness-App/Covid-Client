@@ -11,10 +11,11 @@ import Footer from './Components/Footer.jsx';
 // Import Library Functionality
 // import React, { useEffect, useState } from 'react'
 import { Route } from 'react-router-dom';
+import { useState } from 'react';
 
 
 function App() {
-
+ const [stateId, setStateId] = useState("")
 
   return (
     <div className="App">
@@ -22,9 +23,9 @@ function App() {
       <div className="main">
       <Navbar />
       <Route path="/state/:id"
-             render={(routerProps) => <StateDetails match={routerProps.match}/>}/>
+             render={(routerProps) => <StateDetails setStateId={setStateId} match={routerProps.match}/>}/>
       <Route path="/locations/:id"
-             render={(routerProps) => <LocationDetails match={routerProps.match}/>}/>
+             render={(routerProps) => <LocationDetails stateId={stateId} match={routerProps.match}/>}/>
       <Footer />
       </div>
     </div>

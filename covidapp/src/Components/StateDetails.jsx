@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import CreateLocationBtn from './CreateLocationBtn';
 
-function StateDetails({match}) {
+function StateDetails({match, setStateId}) {
 
     const [stateDetail, setStateDetail] = useState({});
     const [locations, setLocations] = useState([]);
@@ -26,6 +26,7 @@ function StateDetails({match}) {
             .then((res) => res.json())
             .then(res => {
                 // console.log(res)
+                setStateId(match.params.id)
                 setStateDetail(res)
                 getLocations(res.locations)
             })
