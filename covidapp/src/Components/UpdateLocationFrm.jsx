@@ -7,6 +7,7 @@ function UpdateLocationFrm({ setLocationBtn, id }) {
     const [updtLocFrm, setUpdtLocFrm] = useState({});
 
     function updateLocation() {
+        console.log(updtLocFrm)
         axios
             .put(`${url}/locations/${id}`, updtLocFrm)
             .catch((err) => console.log(err));
@@ -24,8 +25,8 @@ function UpdateLocationFrm({ setLocationBtn, id }) {
     
     return (
         <form onSubmit={handleSubmitLoc}>
-            <label htmlFor="state">Name:</label>
-            <select id="state" onChange={handleChangeLoc}>
+            <label htmlFor="name">Name:</label>
+            <select id="name" onChange={handleChangeLoc}>
                 <option value="1">Conneticut</option>
                 <option value="2">Massachusetts</option>
                 <option value="3">Rhode Island</option>
@@ -45,11 +46,11 @@ function UpdateLocationFrm({ setLocationBtn, id }) {
                 <option value="17">California</option>
             </select>
 
-            <label htmlFor="business name">Business name:</label>
-            <input type="text" id="business name" onChange={handleChangeLoc}/>
+            <label htmlFor="business_name">Business name:</label>
+            <input type="text" id="business_name" onChange={handleChangeLoc}/>
 
-            <label htmlFor="business img">Business img:</label>
-            <input type="text" id="business img" onChange={handleChangeLoc}/>
+            <label htmlFor="business_img">Business img:</label>
+            <input type="text" id="business_img" onChange={handleChangeLoc}/>
 
             <label htmlFor="address">Address:</label>
             <input type="text" id="address" onChange={handleChangeLoc}/>
@@ -57,14 +58,15 @@ function UpdateLocationFrm({ setLocationBtn, id }) {
             <label htmlFor="hours">Hours:</label>
             <input type="text" id="hours" onChange={handleChangeLoc}/>
 
-            <label htmlFor="contact number">Contact number:</label>
-            <input type="text" id="contact number" onChange={handleChangeLoc}/>
+            <label htmlFor="contact_number">Contact number:</label>
+            <input type="text" id="contact_number" onChange={handleChangeLoc}/>
 
             <label htmlFor="offers">Offers:</label>
             <textarea
                 id="offers" 
                 cols="30"
                 rows="1"
+                onChange={handleChangeLoc}
             ></textarea>
 
             <button type="submit">Update Location</button>

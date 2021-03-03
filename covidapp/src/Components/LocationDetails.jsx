@@ -9,7 +9,7 @@ function LocationDetails({match}) {
         fetch(`https://cv19-app.herokuapp.com/locations/${match.params.id}`)
             .then((res) => res.json())
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 setLocateDetails(res)
             })
             .catch(console.error);
