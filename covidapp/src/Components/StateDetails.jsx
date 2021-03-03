@@ -39,8 +39,8 @@ function StateDetails({match}) {
 
 
     return (
-        <div>
-                   
+        <div className="stateDetails">   
+        {/* {stateDetail.img_icon}   */}
             <h2>{stateDetail.name}</h2>
             <h3>Average Daily Cases: {stateDetail.average_daily_cases}/day</h3>
             <h3>Get tested / vaccinated at the following locations:</h3>

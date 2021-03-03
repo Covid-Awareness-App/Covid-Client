@@ -2,11 +2,11 @@ import React from 'react';
 
 function DeleteLocation({ id }) {
     const axios = require("axios");
-    const url = "https://cv19-app.herokuapp.com";
+    const url = "https://cv19-app.herokuapp.com/locations/";
 
     function deleteLoctn() {
         axios
-            .delete(`${url}/locaitons/${id}`)
+            .delete(`${url}/${id}`)
             .then(() => window.history.back());
     }
 

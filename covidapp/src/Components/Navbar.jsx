@@ -19,6 +19,7 @@ const Navbar = () => {
 
         return (
             <div className="navbar-container">
+                <h2>STATES</h2>
                 {newState && newState.map((state) => (
                     <Link to={`/state/${state.id}`} key={state.id}>
                         <div>

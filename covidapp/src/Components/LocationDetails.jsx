@@ -16,7 +16,7 @@ function LocationDetails({match}) {
     }, []);
 
     return (
-        <div>
+        <div className="stateDetails">
 
             <h2>{`Business Name: ${locateDetails.business_name}`}</h2>
             <img src={`${locateDetails.business_img}`} alt={`Image of ${locateDetails.business_name}`}/>

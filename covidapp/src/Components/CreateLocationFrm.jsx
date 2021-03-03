@@ -5,17 +5,23 @@ function CreateLocationFrm({ setCreateLocation, id, stateName }) {
     const axios = require("axios");
     const url = "https://cv19-app.herokuapp.com"
 
-    const [locationFrm, setLocationFrm] = useState({});
+    const [locationFrm, setLocationFrm] = useState({
+        
+            "name": `https://cv19-app.herokuapp.com/state/${id}`
+        
+    });
 
     function createLocation() {
+        // console.log(locationFrm)
         axios
-            .post(`${url}/locations`, locationFrm)
+            .post(`${url}/locations/`, locationFrm)
+            .then(res => console.log(res))
             .catch((err) => console.log(err));
     }
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        createLocation(locationFrm);
+        createLocation();
         setCreateLocation(false);
     }
 
@@ -25,16 +31,16 @@ function CreateLocationFrm({ setCreateLocation, id, stateName }) {
 
     return (    
         <form onSubmit={handleSubmit}>
-            <label htmlFor="state">Name:</label>
-            <select id="state" onChange={handleChange}>
-                <option value={id}>{stateName}</option>
+            <label htmlFor="name">Name:</label>
+            <select id="name" onChange={handleChange}>
+                <option value={`https://cv19-app.herokuapp.com/state/${id}`}>{stateName}</option>
             </select>
 
-            <label htmlFor="business name">Business name:</label>
-            <input type="text" id="business name" onChange={handleChange}/>
+            <label htmlFor="business_name">Business name:</label>
+            <input type="text" id="business_name" onChange={handleChange}/>
 
-            <label htmlFor="business img">Business img:</label>
-            <input type="text" id="business img" onChange={handleChange}/>
+            <label htmlFor="business_img">Business img:</label>
+            <input type="text" id="business_img" onChange={handleChange}/>
 
             <label htmlFor="address">Address:</label>
             <input type="text" id="address" onChange={handleChange}/>
@@ -42,14 +48,15 @@ function CreateLocationFrm({ setCreateLocation, id, stateName }) {
             <label htmlFor="hours">Hours:</label>
             <input type="text" id="hours" onChange={handleChange}/>
 
-            <label htmlFor="contact number">Contact number:</label>
-            <input type="text" id="contact number" onChange={handleChange}/>
+            <label htmlFor="contact_number">Contact number:</label>
+            <input type="text" id="contact_number" onChange={handleChange}/>
 
             <label htmlFor="offers">Offers:</label>
             <textarea
                 id="offers" 
                 cols="30"
                 rows="1"
+                onChange={handleChange}
             ></textarea>
 
             <button type="submit">POST</button>
