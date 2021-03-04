@@ -30,7 +30,7 @@ function CreateLocationFrm({ setCreateLocation, id, stateName }) {
     };
 
     return (    
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="submitForm">
             <label htmlFor="name">Name:</label>
             <select id="name" onChange={handleChange}>
                 <option value={`https://cv19-app.herokuapp.com/state/${id}`}>{stateName}</option>

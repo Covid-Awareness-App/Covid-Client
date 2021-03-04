@@ -10,7 +10,7 @@
   align-items: flex-start;
   background-color: lightsteelblue;
   text-decoration: none;
-  width: 20%;
+  width: 100%;
 }
 
 main{
@@ -21,6 +21,43 @@ main{
 }
 
 .stateDetails {
-  /* margin-left: 20%; */
-  /* width: 60%; */
+overflow-y: scroll;
 }
+
+.header {
+  background-color: #79a3b1;
+  height: 100px;
+}
+
+.home-img img {
+  width: 50%;
+  height: 50%; 
+}
+
+.footer {
+  bottom: 0;
+  position: absolute;
+  background-color: #79a3b1;
+  height: 130px;
+  width: 100%;
+}
+
+.footer .links img {
+  width: 3%;
+  height: 3%;
+  display: inline;
+  /* flex-direction: row;
+  justify-content: space-around; */
+
+}
+
+.footer-app {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+/* .submitForm {
+  display: flexbox;
+  flex-direction: column;
+} */
